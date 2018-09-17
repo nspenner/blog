@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "About"
-author: "Chester"
+author: "Nathan Minchow"
 permalink: /about/
 ---
 
-A friend of mine writes short stories. One sunny day, I asked if he wanted a website to showcase his works and he agreed. I decided to use GitHub Pages to host his site. That way he wouldn't have to buy a domain and a server.
+Hi. I'm Nathan. I'm a software developer, musician, occasional actor, maybe game developer, and X-Files binger.
 
-While doing some research up on GitHub Pages, I accidentally chanced upon this _simple, blog-aware, static site generator_ called [Jekyll](https://jekyllrb.com/) which works really well with GitHub Pages. I figured it would do just fine for my friend and I set about searching for a pretty theme. I wanted a theme with a _book-ish_ vibe. Unfortunately, most of the themes were too modern. Eventually, I caved and begun working on my own theme. With the help of [Poole](https://github.com/poole/poole), the Jekyll Butler, I was able to build **Tale**.
+I primarily focus in front-end web development. I'm still finishing my degree, but I've already interned at some pretty awesome companies, including Garmin, PaymentSpring, and First Data.
 
-## Contribute
-Feel free to create an issue or make a pull request on [GitHub](https://github.com/chesterhow/tale).
+For more of my work, please see my [website](https://nminchow.com).
 
-Thanks for reading!
+### Contact
+I don't do much social media, but you can [email](mailto:nathan.minchow@outlook.com) me! You can also find me on [Github](https://www.github.com/nspenner) or [LinkedIn](https://www.linkedin.com/in/nathan-minchow-b165baa5/).
