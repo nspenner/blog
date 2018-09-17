@@ -21,8 +21,11 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-remote-theme
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
 paginate:       5
+
+remote-theme: chesterhow/tale
