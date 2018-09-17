@@ -1,13 +1,13 @@
 # Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
-url:            "https://chesterhow.github.io"
+title:          Nathan Minchow Blog
+description:    "Random musings and things"
+url:            "https://nspenner.github.com"
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Nathan Minchow
+  url:          https://nminchow.com
+  email:        nathan.minchow@outlook.com
 
 # Build settings
 markdown:       kramdown
