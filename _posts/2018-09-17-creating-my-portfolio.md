@@ -1,5 +1,5 @@
 ---
-title: "Creating a Portfolio"
+title: "Creating my Portfolio"
 author: "Nathan Minchow"
 layout: "post"
 ---
@@ -22,7 +22,7 @@ I liked the box-centric design for the content on the right. It would be fairly 
 
 ![Portfolio Design 1](/assets/2018-09-17-creating-a-portfolio/portfolio1.gif "Portfolio Design 1")
 
-The main grid for the site was used for the content on the right. It was two columns and simply took up all the free space available, and it switched to one column for the mobile layout. It was a pretty small amount of CSS overall:
+I wanted some personal touches in my portfolio, so the background image on the left side of the site is a photo I took at Mills Lake in Rocky Mountain National Park (which is my favorite hike in the whole park!). Grid was used for the content on the right. It was two columns and simply took up all the free space available, and it switched to one column for the mobile layout. It was a pretty small amount of CSS overall:
 ```css
 main {
   display: grid;
@@ -38,7 +38,7 @@ main {
   }
 ```
 
-Grid is great! Of course, some of the actual content boxes had their own CSS, like the top biography which spanned both columns.
+Grid is great! Of course, some of the actual content boxes had their own CSS, like the top biography which spanned both columns. For the most part, however, this CSS was the bulk of my layout.
 
 Unfortunately, I soon ran into a problem when I actually added content to the site:
 
@@ -48,8 +48,10 @@ I had designed my layout perfectly for the scenario when everything fit nicely o
 
 ![Portfolio Design 3](/assets/2018-09-17-creating-a-portfolio/portfolio3.gif "Portfolio Design 3")
 
-All better! Of course, forcing the user to scroll just because I wanted some fun images on half of the screen wasn't the best the design decision. So, I retooled some things. I changed the ratio so that the website was split closer to 30/70, and the boxes were adjusted to take advantage of the space. For example, the projects box had more content than the others, so I let it span two rows instead. Eventually, I had this:
+All better! Of course, forcing the user to scroll just because I wanted some fun images on half of the screen wasn't the best the design decision. So, I retooled some things. I changed the location of the middle divider such that the website was split closer to 25/75, and the boxes were adjusted to take more advantage of the available space. For example, the projects box had more content than the others, so I let it span two rows instead. Eventually, I had this:
 
 ![Final Design](/assets/2018-09-17-creating-a-portfolio/portfolio4.jpg "Final Design")
 
-I was pleased with the final result, and learned quite a bit about Grid, background images, and responsive layouts along the way. The live version can be found [here](https://nminchow.com).
+To host the site, I used [Github Pages](https://pages.github.com), which I'd heartily recommend to anyone that needs to host a fairly simple static site. There are plenty of other blogs and posts that detail setting up a Github Pages site with a custom domain. I found [this one](https://hackernoon.com/use-custom-domain-with-github-pages-2-straightforward-steps-cf561eee244f) particularly useful. Fun fact: I'm also using Github Pages to host this blog!
+
+I was pleased with the final result, and learned quite a bit about Grid, background images, and responsive layouts along the way. The live version can be found [here](https://nminchow.com), with source code available [here](https://github.com/nspenner/portfolio2).
