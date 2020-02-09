@@ -8,17 +8,17 @@ Standard word processors don't hold a candle to HTML and CSS when it comes to co
 
 # Getting Started
 
-First, a disclaimer: this guide is not meant to provide resume templates or styling advice for an effective resume. Rather, I'm detailing a process for handling a resume print layout in HTML/CSS. This includes setup, print styling, and a final PDF export.
+First, a disclaimer: this guide is not meant to provide resume templates or styling advice. Rather, I'm detailing a process for handling a resume print layout in HTML/CSS. This includes setup, print styling, and a final PDF export.
 
 ## Wireframe
 
-It's much easier to write HTML and CSS when working from a mockup or wireframe. I used an old resume I had created in Word as my baseline, but you could just as easily mock something up in a free tool like [Adobe XD](https://www.adobe.com/products/xd.html) or [Figma](https://www.figma.com/) (Figma even supports print sizes by default).
+It's much easier to write HTML and CSS when working from a mockup or wireframe. I used an old resume from Word as my baseline, but you could just as easily mock something up in a free tool like [Adobe XD](https://www.adobe.com/products/xd.html) or [Figma](https://www.figma.com/) (Figma even supports print sizes by default).
 
-If you already have content from a past resume ready to go (like I did), you can just break out your design into sections and add the details later:
+If you already have content from a past resume ready to go (like I did), you can break out your design into sections and add the details later:
 
 ![Wireframe of resume built in Figma](../assets/2020-01-30-resume-redo/wireframe.png)
 
-We don't have to adhere to the exact styling of a template or mockup, but it can be a useful tool for organizing our overall layout.
+We don't have to adhere to the exact styling of a template or mockup, but it can be useful for organizing the overall layout.
 
 ## Setting up a "Canvas"
 
@@ -47,13 +47,13 @@ Here's what that might look like on a barebones page (use 0.5x or 0.25x zoom for
   (<a href='https://codepen.io/nathanspenner'>@nathanspenner</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Use your canvas container as a way to set default styles on your entire page, similar to defaults in Word. Other good properties to consider adding here are `line-height` and font properties like `font-size` and `font-family`.
+Use your canvas container to set default styles on your entire page, similar to defaults in a word processor. Other good properties to consider adding here are `line-height` and font properties like `font-size` and `font-family`.
 
 # Layout and Content
 
-Using your wireframe for reference, map out how you will divide your canvas space into sections of content. This is where tools like [Flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Grid) and [Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) will come in handy if you are doing anything complicated layout-wise.
+Using your wireframe for reference, map out how you will divide your canvas space into sections of content. This is where tools like [Flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Grid) and [Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) will come in handy if your layout is more complex.
 
-My setup was fairly straightforward: each box of my wireframe was broken into a `section` element. Whenever I had content spanning two columns, I used a grid to split them up:
+My setup was fairly straightforward: each area of my resume was broken into a `section` element. Whenever I had content spanning two columns, I used a grid to split them up:
 
 ```css
 .multicolumn {
@@ -72,23 +72,23 @@ Here's what that looks like in practice:
 
 In my resume, I only needed a multicolumn layout for two sections, **Experience** and **Certifications / Skills**. I hid the content, but here's how those grids are situated on my current layout:
 
-![Canvas with grid lines](../assets/2020-01-30-resume-redo/layout.png)
+![HTML document container with grid lines](../assets/2020-01-30-resume-redo/layout.png)
 
-One added bonus of using something like `grid` is maintainability; I could very easily add another instance of work experience and have the grid automatically account for it without destroying the rest of my layout:
+One added bonus of using something like `grid` is maintainability; I could very easily add another instance of work experience and have the grid automatically adjust without destroying the rest of my layout:
 
-![Canvas with more grid lines](../assets/2020-01-30-resume-redo/layout-extra.png)
+![HTML document container with more grid lines](../assets/2020-01-30-resume-redo/layout-extra.png)
 
-Apart from using `grid` in those two instances, everything else fit nicely into sections using [normal flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow). Feel free to use whatever works best for you!
+Apart from using `grid` in those two instances, everything else fit nicely into sections using [normal flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow). Feel free to use whatever works best for you.
 
 # Exporting
 
-Most companies and recruiters won't accept an HTML page as a valid resume. Therefore, you'll want to export your page as a PDF. We can download a webpage as a PDF using the browser's Print command, but we'll need to do some adjustments to our CSS beforehand.
+Most companies and recruiters won't accept an HTML page as a valid resume. Therefore, you'll want to export your page as a PDF. Browsers can do this readily via the Print command, but we'll need to do some adjustments to our CSS beforehand.
 
 ## Print Styles
 
 We'll be taking advantage of the [print media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) to style our exported page. It allows us to apply styles specifically when a browser attempts to print.
 
-If you followed my advice of building everything inside a container, this should be a pretty easy process. For simplicity, I made the entire `html` element's width and height match the print size of my container. You may also need to remove any margins (and box-shadows!) for elements between the `body` and your container, otherwise the added space might cause an extra page to render:
+If you followed my advice of building everything inside a container, this should be a straightforward process. For simplicity, I made the entire `html` element's width and height match the print size of my container. You may also need to remove any margins (and box-shadows!) for elements between the `body` and your container, otherwise the added space might cause an extra page to render:
 
 ```css
 @media print {
@@ -113,9 +113,9 @@ If you followed my advice of building everything inside a container, this should
 
 With browser styles in place, we can use the browser's Print dialog to save our page as a PDF.
 
-While I love Firefox, I have to admit that Blink's Print functionality tends to do a much better job of accurately exporting a page. I used Chrome for my final export.
+While I love Firefox, Blink's Print functionality tends to do a much better job of accurately exporting a page. I used Chrome for my final export – as detailed in the following instructions.
 
-After opening the print dialog, you'll want to set your Destination to "Save as PDF". Additionally, you'll want to adjust a few settings before saving the final result. Make sure you've expanded the "More settings" option and check the following:
+After opening the print dialog, set your Destination to "Save as PDF". Additionally, you'll want to adjust a few settings before saving the final result. Expand the "More settings" option and check the following:
 
 - Color is enabled if you are using anything other than shades of gray
 - Paper size is set to your preferred size (I used Letter throughout this guide)
@@ -129,6 +129,6 @@ Go ahead and save the page. With that, you should have both an easily maintainab
 
 # Conclusion
 
-I hope this guide was a helpful starting point in how to create a resume in HTML and CSS!
+I hope this guide was a helpful starting point in how to create a resume in HTML and CSS.
 
 If you're curious for what my final result was, the source code for my current implementation is available [here](https://github.com/nspenner/portfolio/tree/master/pages/resume).
