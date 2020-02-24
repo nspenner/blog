@@ -4,4 +4,6 @@ author: Nathan Minchow
 layout: post
 
 ---
-This is a test post
+# Test Post
+
+This is a test post from Forestry.
