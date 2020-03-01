@@ -19,10 +19,10 @@ Full website theme customization may be overkill for some sites, but it's still 
 
 For example, I've defined three different colors below. When the checkbox is toggled, the CSS properties update and colors change wherever they are referenced:
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
-<span>See the Pen <a href="https://codepen.io/nathanspenner/pen/LYVxpjP">
-Custom Property Update No JS</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
-on <a href="https://codepen.io">CodePen</a>.</span>
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
+  <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/LYVxpjP">
+  Custom Property Update No JS</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
@@ -36,7 +36,8 @@ Custom Properties can do a lot of useful things. While this article is focused o
 
 The most straightforward way to add dark mode to your site is via the [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query. This media query typically corresponds to the theme of the user's operating system.
 
-So, if we have some properties defined like so:
+So, if we have some scoped properties defined like so:
+
 ```css
     main {
       --primary-color: cyan;
@@ -44,7 +45,9 @@ So, if we have some properties defined like so:
       --tertiary-color: yellow;
     }
 ```
+
 We can simply update their values in the media query:
+
 ```css
     @media (prefers-color-scheme: dark) {
       main {
@@ -54,10 +57,30 @@ We can simply update their values in the media query:
       }
     }
 ```
+
 And any elements using those properties will update dynamically. Here's how that might look in practice:
 
 ![](/assets/prefers_color_scheme.gif)
 
 ## Custom Theme Selection
+
+While `prefers-color-scheme` is a great starting point, sometimes we want to give the user the ability to select a theme as well.
+
+If you've designed your site to take advantage of Custom Properties, we can accomplish this fairly easily.
+
+### Modify Custom Properties with CSS
+
+Custom Properties, like any other CSS, can be updated as long as we have the proper selector.
+
+In the example below, I've scoped my Custom Properties to the `main` element. When the checkbox is toggled, a selector updates the values of the main element. This causes all elements within it to update with the new values:
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
+  <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/LYVxpjP">
+  Custom Property Update No JS</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+### Modify Custom Properties with Javascript
 
 ## Custom Color Selection
