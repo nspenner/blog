@@ -37,15 +37,15 @@ Custom Properties can do a lot of useful things. While this article is focused o
 The most straightforward way to add dark mode to your site is via the [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query. This media query typically corresponds to the theme of the user's operating system.
 
 So, if we have some properties defined like so:
-
+```css
     main {
       --primary-color: cyan;
       --secondary-color: orange;
       --tertiary-color: yellow;
     }
-
+```
 We can simply update their values in the media query:
-
+```css
     @media (prefers-color-scheme: dark) {
       main {
         --primary-color: gray;
@@ -53,7 +53,7 @@ We can simply update their values in the media query:
         --tertiary-color: lightgray;
       }
     }
-
+```
 And any elements using those properties will update dynamically. Here's how that might look in practice:
 
 ![](/assets/prefers_color_scheme.gif)
