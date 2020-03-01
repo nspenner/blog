@@ -17,7 +17,7 @@ Full website theme customization may be overkill for some sites, but it's still 
 
 [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) allow us to define reusable variables in CSS without a preprocessor. They aren't exactly _new_; [most modern browsers have supported them since 2016](https://caniuse.com/#feat=css-variables). And since they are variables, we can update them dynamically.
 
-For example, I've defined three different colors below. When the checkbox is toggled, the CSS properties update and colors change wherever they are referenced:
+I've defined three different colors in the below example. When the checkbox is toggled, the CSS properties update and colors change wherever they are referenced:
 
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
   <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/LYVxpjP">
@@ -72,7 +72,7 @@ If you've designed your site to take advantage of Custom Properties, we can acco
 
 Custom Properties, like any other CSS, can be updated as long as we have the proper selector.
 
-In the example below, I've scoped my Custom Properties to the `main` element. When the checkbox is toggled, a selector updates the values of the main element. This causes all elements within it to update with the new values:
+If you examine the CSS from my earlier example, you'll notice that I've scoped my Custom Properties to the `main` element. When the checkbox is toggled, a selector updates the scoped properties inside it. This causes all elements within the `main` element to update with the new values:
 
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
   <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/LYVxpjP">
@@ -81,6 +81,10 @@ In the example below, I've scoped my Custom Properties to the `main` element. Wh
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
+While this method is pretty quick to implement, CSS selectors can be somewhat fickle (and dependent on our HTML). Furthermore, in most cases we'd want to save a user's theme choice. Javascript gives us more flexibility and isn't much harder to use.
+
 ### Modify Custom Properties with Javascript
+
+
 
 ## Custom Color Selection
