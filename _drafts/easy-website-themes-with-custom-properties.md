@@ -5,7 +5,7 @@ layout: post
 date: 2020-02-23 06:00:00 +0000
 
 ---
-![](/assets/prefers_color_scheme.gif)With the [advent of dark mode](https://mashable.com/article/dark-mode-apps-instagram-google-chrome-apple-ios13/), website theme customization is becoming an expectation instead of a feature.
+With the [advent of dark mode](https://mashable.com/article/dark-mode-apps-instagram-google-chrome-apple-ios13/), website theme customization is becoming an expectation instead of a feature.
 
 Plenty of websites go a step further and allow their users to select from multiple themes (like [dev.to](https://dev.to)):
 
