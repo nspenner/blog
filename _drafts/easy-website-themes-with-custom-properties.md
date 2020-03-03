@@ -66,7 +66,7 @@ And any elements using those properties will update dynamically. Here's how that
 
 While `prefers-color-scheme` is a great starting point, sometimes we want to give the user the ability to select a theme as well.
 
-If you've designed your site to take advantage of Custom Properties, we can accomplish this fairly easily.
+If you've designed your site to take advantage of Custom Properties, we can accomplish this fairly easily. All we need to do is modify them, which we can do via CSS or Javascript.
 
 ### Modify Custom Properties with CSS
 
