@@ -28,9 +28,7 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 
 Custom Properties can do a lot of useful things. While this article is focused on theme customization, I'd recommend reading [this excellent article](https://www.smashingmagazine.com/2018/05/css-custom-properties-strategy-guide/) by Michael Riethmuller for a more in-depth look at CSS Custom Properties, how to use them, and how they differ from preprocessor variables.
 
-# Using Custom Properties on a Page
-
-# Customization Use Cases
+# Theme Customization Use Cases
 
 ## Implementing Dark Mode
 
@@ -145,7 +143,7 @@ function applyTheme(theme) {
 }
 ```
 
-Feel free to take a look at the preview [here](https://nspenner.github.io/theme-lab/), with the source code available [here](https://github.com/nspenner/theme-lab). 
+Feel free to take a look at the preview [here](https://nspenner.github.io/theme-lab/), with the source code available [here](https://github.com/nspenner/theme-lab).
 
 By implementing theme customization like this, adding a new theme to the site is as simple as creating a new theme object. We could save a user's preference via [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or a database depending on what tools we have available.
 
@@ -154,9 +152,9 @@ By implementing theme customization like this, adding a new theme to the site is
 Some websites and apps allow users to create and modify themes directly. Once again, we can use `setProperty()` to update a Custom Property with any value, including ones exposed for input:
 
 <p class="codepen" data-height="357" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="yLNPExq" style="height: 357px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Javascript Style Updates Custom Selection">
-  <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/yLNPExq">
-  Javascript Style Updates Custom Selection</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
+<span>See the Pen <a href="https://codepen.io/nathanspenner/pen/yLNPExq">
+Javascript Style Updates Custom Selection</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
+on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
