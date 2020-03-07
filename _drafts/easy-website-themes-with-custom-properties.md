@@ -105,7 +105,7 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-While those examples only altered a few `div` elements,, the same technique can be used to alter the theme for an entire site. To demonstrate this, I modified [a template from HTML5UP](https://html5up.net/read-only) to use Custom Properties for most backgrounds, text colors, and accents. Then, I added a toggle button that updates those properties with dark values instead:
+While those examples only altered a few `div` elements, the same technique can be used to alter the theme for an entire site. To demonstrate this, I modified [a template from HTML5UP](https://html5up.net/read-only) to use Custom Properties for most backgrounds, text colors, and accents. Then, I added a toggle button that updates those properties with dark values instead:
 
 ![](/assets/theme_demo.gif)
 
