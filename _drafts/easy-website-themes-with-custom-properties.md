@@ -17,6 +17,33 @@ Full website theme customization may be overkill for some sites, but it's still 
 
 [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) allow us to define reusable variables in CSS without a preprocessor. They aren't exactly _new_; [most modern browsers have supported them since 2016](https://caniuse.com/#feat=css-variables). And since they are variables, we can update them dynamically.
 
+Custom Properties can be defined on any element by prefixing the property name with `--`. If we wanted to create reusable properties on the `root` element, we could define them like so (these examples are taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)):
+
+```css
+:root {
+  --first-color: #488cff;
+  --second-color: #ffff8c;
+}
+```
+
+We can access these properties in child elements via the `var()` keyword:
+
+```css
+#firstParagraph {
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+#secondParagraph {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+#container {
+  --first-color: #48ff32;
+}
+```
+
 To see this in action, I've defined three different colors in the example below. When the checkbox is toggled, the CSS properties update and colors change wherever they are referenced:
 
 <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="LYVxpjP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom Property Update No JS">
