@@ -109,4 +109,57 @@ While those examples only altered a few `div` elements, the same technique can b
 
 ![](/assets/theme_demo.gif)
 
+The code for the theme switch is very similar to the CodePens above. I define a couple "Theme" objects in my Javascript:
+
+```js
+const darkTheme = {
+  "--accent-color": "#4acaa8",
+  "--background-color": "#343737",
+  "--active-scroll-background": "#343737",
+  "--color-text": "white",
+  "--sidebar-color": "#444c48"
+};
+    
+const lightTheme = {
+  "--accent-color": "#4bcdab",
+  "--background-color": "#f0ffff",
+  "--active-scroll-background": "#f0ffff",
+  "--color-text": "#777",
+  "--sidebar-color": "#4bcdab"
+};
+```
+
+Then, when the toggle button is pressed, I update the Custom Properties I've defined on the root element with properties from a given "Theme":
+
+```js
+function applyTheme(theme) {
+  let root = document.documentElement;
+  root.style.setProperty("--accent-color", theme["--accent-color"]);
+  root.style.setProperty("--background-color", theme["--background-color"]);
+  root.style.setProperty(
+    "--active-scroll-background",
+    theme["--active-scroll-background"]
+  );
+  root.style.setProperty("--color-text", theme["--color-text"]);
+  root.style.setProperty("--sidebar-color", theme["--sidebar-color"]);
+}
+```
+
+Feel free to take a look at the preview [here](https://nspenner.github.io/theme-lab/), with the source code available [here](https://github.com/nspenner/theme-lab). 
+
+By implementing theme customization like this, adding a new theme to the site is as simple as creating a new theme object. We could save a user's preference via [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or a database depending on what tools we have available.
+
 ## Custom Color Selection
+
+Some websites and apps allow users to create and modify themes directly. Once again, we can use `setProperty()` to update a Custom Property with any value, including ones exposed for input:
+
+<p class="codepen" data-height="357" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="yLNPExq" style="height: 357px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Javascript Style Updates Custom Selection">
+  <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/yLNPExq">
+  Javascript Style Updates Custom Selection</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+# Conclusion
+
+Custom Properties allow us to make sweeping changes to our website without much work. This makes them a great tool for implementing theme customization, whether for automatically detecting a user's theme preference with `prefers-color-scheme` or allowing them to pick (and potentially modify) their own themes.
