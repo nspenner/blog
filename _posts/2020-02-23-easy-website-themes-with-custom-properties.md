@@ -2,7 +2,7 @@
 title: Easy Website Themes with CSS Custom Properties
 author: Nathan Minchow
 layout: post
-date: 2020-02-23 06:00:00 +0000
+date: 2020-03-07 06:00:00 +0000
 
 ---
 With the [advent of dark mode](https://mashable.com/article/dark-mode-apps-instagram-google-chrome-apple-ios13/), website theme customization is becoming an expectation instead of a feature.
