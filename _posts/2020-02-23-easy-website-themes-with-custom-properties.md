@@ -57,6 +57,8 @@ Custom Properties can do a lot of useful things. I recommend reading [this excel
 
 # Theme Customization Use Cases
 
+Since Custom Properties can be reused and updated dynamically, they are a good fit for theme customization. Let's look at how we can use Custom Properties to customize a site.
+
 ## Implementing Dark Mode
 
 The most straightforward way to add a dark mode to your site is via the [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query. This media query typically corresponds to the theme of the user's operating system.
@@ -176,7 +178,9 @@ By implementing theme customization like this, adding a new theme to the site is
 
 ## Custom Color Selection
 
-Some websites and apps allow users to create and modify themes directly. Once again, we can use `setProperty()` to update a Custom Property with any value, including ones exposed for input:
+Some websites and apps allow users to create and modify themes directly. Once again, we can use `setProperty()` to update a Custom Property with any value, including ones exposed for input.
+
+In the Codepen below, the colors of the first square and the borders of all squares are exposed as input elements. When the form is submitted, these values are updated and are reflected in the result:
 
 <p class="codepen" data-height="357" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="yLNPExq" style="height: 357px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Javascript Style Updates Custom Selection">
 <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/yLNPExq">
@@ -184,6 +188,8 @@ Javascript Style Updates Custom Selection</a> by Nathan Minchow (<a href="https:
 on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Naturally, we could extend this to expose the various properties used on an entire website or application. Those preferences could then be exported or saved to remember a user's choice (or to allow users to share themes). 
 
 # Conclusion
 
