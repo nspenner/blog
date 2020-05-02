@@ -5,7 +5,7 @@ layout: post
 date: 2020-03-19 00:00:00 +0000
 
 ---
-A lot of developers don't like writing CSS. I don't blame them; CSS is not a very intuitive language, at least not at first glance. I think there are two major pain points that lead to this frustration:
+A lot of developers don't like writing CSS. I don't blame them; CSS is not a very intuitive language. I think there are two major pain points that lead to frustration:
 
 1. Lack of fundamental CSS knowledge
 2. Difficulty modifying and debugging CSS efficiently
