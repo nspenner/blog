@@ -15,11 +15,13 @@ It would be great if users could indicate that they'd prefer to minimize their d
 
 Curiously, `prefers-reduced-motion`, `prefers-color-scheme`, and `prefers-reduced-data` (among others) were all introduced in the [Media Queries 5 ](https://drafts.csswg.org/mediaqueries-5/) spec from the W3C, but `prefers-reduced-data` has not seen the progress of the other two. There are some [open questions](https://github.com/w3c/csswg-drafts/issues?q=is%3Aissue+is%3Aopen+label%3Amediaqueries-5+prefers-reduced-data) related to the feature which could be slowing it down.
 
-I'm hopeful that we'll see this feature implemented sooner rather than later. The `<picture>` and `<link>` elements both support media queries already, which means we could already account for images, fonts, and libraries without much work. it would be fairly easy to account for users who don't want extra data loads bogging them down.
+I'm hopeful that we'll see this feature implemented sooner rather than later. The `<picture>` and `<link>` elements both support media queries already, which means we could already account for images, fonts, and libraries without much work. Let's look at a potential method to prevent an image from loading if a user indicated they preferred reduced data.
 
-```html
-<head>
-  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" media="(prefers-reduced-data: no-preference)" crossorigin>
-  <link rel="stylesheet" href="style.css">
-</head>
-```
+`min-width` and `max-width` are common media queries to pair with the `<picture>` element because they allow us to load different images based on the form factor of the user's device. So we could a smaller image for mobile users and a larger image for desktop users.
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Picture element example">
+  <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/zYrBNYM">
+  Picture element example</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
