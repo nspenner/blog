@@ -62,4 +62,5 @@ body {
 }
 ```
 
-I'm looking forward to the day when these examples actually work in the modern browser. Until then, we have other methods to handle this like [Save Data HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data), although they don't seem nearly as elegant to me.
+Until browser support improves, we have other methods like the [Save Data HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) to handle similar use-cases. Still, I think `prefers-reduced-data` is more elegant and more straightforward for developers. I'm looking forward to the day that we can use it in modern browsers, whenever that may be.
+
