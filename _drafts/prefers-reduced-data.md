@@ -61,3 +61,5 @@ body {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Microsoft YaHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 ```
+
+I'm looking forward to the day when these examples actually work in the modern browser. Until then, we have other methods to handle this like [Save Data HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data), although they don't seem nearly as elegant to me.
