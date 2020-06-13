@@ -17,7 +17,7 @@ Curiously, `prefers-reduced-motion`, `prefers-color-scheme`, and `prefers-reduce
 
 I'm hopeful that we'll see this feature implemented sooner rather than later. The `<picture>` and `<link>` elements both support media queries already, which means we could already account for images, fonts, and libraries without much work. Let's look at a potential method to prevent an image from loading if a user indicated they preferred reduced data.
 
-`min-width` and `max-width` are common media queries to pair with the `<picture>` element because they allow us to load different images based on the form factor of the user's device. So we could a smaller image for mobile users and a larger image for desktop users. In the pen below, the image swaps to a different one once the width of the window shrinks below 400px.
+`min-width` and `max-width` are common media queries to pair with the `<picture>` element because they allow us to load different images based on the form factor of the user's device. In the pen below, the image swaps to a different one once the width of the window shrinks below 400px.
 
 <p class="codepen" data-height="456" data-theme-id="dark" data-default-tab="html,result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 456px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Picture element example">
   <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/zYrBNYM">
@@ -26,11 +26,38 @@ I'm hopeful that we'll see this feature implemented sooner rather than later. Th
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-If we wanted to use `prefers-reduced-data` to minimize our data load, we could use [this technique from a blog post by Mike Masey](https://medium.com/@mike_masey/how-to-use-the-picture-element-to-prevent-images-loading-on-mobile-devices-1376e33b190e) to load a tiny, 1x1 transparent gif:
+If we wanted to use `prefers-reduced-data` to minimize our data load, we could use [this technique from a blog post by Mike Masey](https://medium.com/@mike_masey/how-to-use-the-picture-element-to-prevent-images-loading-on-mobile-devices-1376e33b190e) to load a tiny, 1x1 transparent gif instead of a full image:
 
 ```html
     <picture>
         <source srcset="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" media="(prefers-reduced-data: reduce)">
         <img src="https://unsplash.com/photos/7hQ4Y_-bSb4/download?force=true&w=640" />
     </picture>
+```
+The best part about using the `<picture>` element like this is that no request is made to the full image at all, which could quite a bit of data for the user.
+
+We could do something similar to prevent the loading and use of web fonts (this example comes from MDN):
+
+```html
+<head>
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" media="(prefers-reduced-data: no-preference)" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+```
+```css
+@media (prefers-reduced-data: no-preference) {
+    @font-face {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        /* latin */
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url('fonts/montserrat-regular.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+}
+
+body {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Microsoft YaHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 ```
