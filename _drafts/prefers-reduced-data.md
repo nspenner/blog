@@ -11,7 +11,7 @@ Still, sometimes I wonder if I ought to force my users to download a font (even 
 
 It would be great if users could indicate that they'd prefer to minimize their data load as they browse the web, potentially at the cost of high-res images or detailed typography. That's where `prefers-reduced-data` comes into play.
 
-`prefers-reduced-data` is a user preference media feature, like `prefers-color-scheme` and `prefers-reduced-motion`. Unlike those, `prefers-reduced-data` is not supported in any browsers yet, and it's functionality could change bit before we see it implemented anywhere.
+[`prefers-reduced-data`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data) is a user preference media feature, like `prefers-color-scheme` and `prefers-reduced-motion`. Unlike those, `prefers-reduced-data` is [not supported in any browsers yet](https://caniuse.com/#feat=mdn-css_at-rules_media_prefers-reduced-data), and it's functionality could change bit before we see it implemented anywhere.
 
 Curiously, `prefers-reduced-motion`, `prefers-color-scheme`, and `prefers-reduced-data` (among others) were all introduced in the [Media Queries 5 ](https://drafts.csswg.org/mediaqueries-5/) spec from the W3C, but `prefers-reduced-data` has not seen the progress of the other two. There are some [open questions](https://github.com/w3c/csswg-drafts/issues?q=is%3Aissue+is%3Aopen+label%3Amediaqueries-5+prefers-reduced-data) related to the feature which could be slowing it down.
 
@@ -36,7 +36,7 @@ If we wanted to use `prefers-reduced-data` to minimize our data load, we could u
 ```
 The best part about using the `<picture>` element like this is that no request is made to the full image at all, which could quite a bit of data for the user.
 
-We could do something similar to prevent the loading and use of web fonts (this example comes from MDN):
+We could do something similar to prevent the loading and use of web fonts (this example comes [from MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data):
 
 ```html
 <head>
