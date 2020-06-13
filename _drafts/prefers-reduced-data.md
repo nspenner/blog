@@ -19,23 +19,7 @@ I'm hopeful that we'll see this feature implemented sooner rather than later. Th
 
 `min-width` and `max-width` are common media queries to pair with the `<picture>` element because they allow us to load different images based on the form factor of the user's device. So we could a smaller image for mobile users and a larger image for desktop users.
 
-<p class="codepen" data-height="456" data-theme-id="dark" data-default-tab="html,result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 456px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;.cp_embed_wrapper {
-  /* required for resize to work */
-  overflow: hidden;
-
-  /* make resizeble! */
-  resize: both;
-
-  /* required to see the handle */
-  background: white;
-  padding-bottom: 10px;
-
-  /* default height */
-  height: 400px;
-}
-.cp_embed_wrapper iframe {
-  height: 100% !important;
-}" data-pen-title="Picture element example">
+<p class="codepen" data-height="456" data-theme-id="dark" data-default-tab="html,result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 456px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Picture element example">
   <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/zYrBNYM">
   Picture element example</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
