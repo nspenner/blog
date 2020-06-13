@@ -19,7 +19,7 @@ I'm hopeful that we'll see this feature implemented sooner rather than later. Th
 
 `min-width` and `max-width` are common media queries to pair with the `<picture>` element because they allow us to load different images based on the form factor of the user's device. In the pen below, the image swaps to a different one once the width of the window shrinks below 400px.
 
-<p class="codepen" data-height="456" data-theme-id="dark" data-default-tab="html,result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 456px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Picture element example">
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="nathanspenner" data-slug-hash="zYrBNYM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Picture element example">
   <span>See the Pen <a href="https://codepen.io/nathanspenner/pen/zYrBNYM">
   Picture element example</a> by Nathan Minchow (<a href="https://codepen.io/nathanspenner">@nathanspenner</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -63,4 +63,3 @@ body {
 ```
 
 Until browser support improves, we have other methods like the [Save Data HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) to handle similar use-cases. Still, I think `prefers-reduced-data` is more elegant and more straightforward for developers. I'm looking forward to the day that we can use it in modern browsers, whenever that may be.
-
